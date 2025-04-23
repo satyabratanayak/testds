@@ -2,10 +2,13 @@ name: Generate Flutter Design Tokens
 
 on:
   push:
-    branches: 
+    branches:
       - main
     paths:
       - "tokens/tokens.json"
+
+permissions:
+  contents: write
 
 jobs:
   generate:
