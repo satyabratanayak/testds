@@ -3,7 +3,7 @@ name: Generate Flutter Design Tokens
 on:
   push:
     paths:
-      - "tokens/tokens.json" # Only trigger if token file changes
+      - "tokens/tokens.json"
 
 jobs:
   generate:
@@ -13,11 +13,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Dart
-        uses: dart-lang/setup-dart@v1
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.19.0" # or your preferred version
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
 
       - name: Run token generator
         run: dart run tool/token_generator.dart
