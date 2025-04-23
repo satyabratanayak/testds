@@ -2,5 +2,5 @@
 import 'package:flutter/material.dart';
 
 class MinyColors {
-  static const Color primary_brand = Color(0xFF3B82F6);
+  static const Color primary_brand = Color(0xFF1F1E00);
 }
